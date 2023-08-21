@@ -26,20 +26,24 @@ class FilmSerializer(serializers.Serializer):
         return Film.objects.create(**validate_data)
     
     def update(self,instance,validated_data):
-        print(instance.Title)
-        instance.Title = validated_data.get('Title',instance.Title)
-        print(instance.Title)
-        instance.Country = validated_data.get('Country',instance.Country)
-        instance.Language = validated_data.get('Language',instance.Language)
-        instance.Writer = validated_data.get('Writer',instance.Writer)
-        instance.Director = validated_data.get('Director',instance.Director)
-        instance.Actors = validated_data.get('Actors',instance.Actors)
-        instance.Actress = validated_data.get('Actress',instance.Actress)
-        instance.Genre = validated_data.get('Genre',instance.Genre)
-        instance.Type = validated_data.get('Type',instance.Type)
-        instance.Year = validated_data.get('Year',instance.Year)
-        instance.imdbRating = validated_data.get('imdbRating',instance.imdbRating)
-        instance.Runtime = validated_data.get('Runtime',instance.Runtime)
+        # print(instance.Title)
+        # instance.Title = validated_data.get('Title',instance.Title)
+        # print(instance.Title)
+        # instance.Country = validated_data.get('Country',instance.Country)
+        # instance.Language = validated_data.get('Language',instance.Language)
+        # instance.Writer = validated_data.get('Writer',instance.Writer)
+        # instance.Director = validated_data.get('Director',instance.Director)
+        # instance.Actors = validated_data.get('Actors',instance.Actors)
+        # instance.Actress = validated_data.get('Actress',instance.Actress)
+        # instance.Genre = validated_data.get('Genre',instance.Genre)
+        # instance.Type = validated_data.get('Type',instance.Type)
+        # instance.Year = validated_data.get('Year',instance.Year)
+        # instance.imdbRating = validated_data.get('imdbRating',instance.imdbRating)
+        # instance.Runtime = validated_data.get('Runtime',instance.Runtime)
+
+        for attr in ['Title', 'Country', 'Language', 'Writer','Director',
+            'Actors','Actress','Genre', 'Type', 'imdbRating', 'Runtime']:
+            setattr(instance,attr, validated_data.get(attr,getattr(instance,attr)))
 
         instance.save()
         return instance
