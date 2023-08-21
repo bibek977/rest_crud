@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'intern_api',
-    'crud_api'
+    'crud_api',
+    'function_api'
 ]
 
 MIDDLEWARE = [

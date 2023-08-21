@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/',include('api.urls')),
     path('intern_api/',include('intern_api.urls')),
     path('crud_api/',include("crud_api.urls")),
+    path('function_api/',include('function_api.urls'))
 ]

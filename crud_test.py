@@ -42,7 +42,7 @@ url = "http://127.0.0.1:8000/crud_api/crud_class/"
 def update_data(id):
     data = {
         'id':id,
-        "Title": "End Game",
+        "Title": "thor 4",
         "Country": "USA",
         "Language": "English",
 
@@ -58,7 +58,7 @@ def update_data(id):
     r= requests.put(url=url, data=json_data)
     print(r.json())
 
-update_data(4)
+update_data(1)
 
 # def delete_data(id):
 #     data = {
