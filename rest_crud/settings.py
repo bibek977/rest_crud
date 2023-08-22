@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'api',
     'intern_api',
     'crud_api',
-    'function_api'
+    'function_api',
+    'mixins'
 ]
 
 MIDDLEWARE = [
