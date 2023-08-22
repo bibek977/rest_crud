@@ -6,6 +6,16 @@ from rest_framework import status
 from rest_framework.response import Response
 
 
+class InternModelViewSet(viewsets.ModelViewSet):
+    queryset = Intern.objects.all()
+    serializer_class = InternSerializer
+
+
+class InternReadOnly(viewsets.ReadOnlyModelViewSet):
+    queryset = Intern.objects.all()
+    serializer_class = InternSerializer
+
+
 class InternViewSet(viewsets.ViewSet):
 
     def show(self):
