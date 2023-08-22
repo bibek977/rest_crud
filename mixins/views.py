@@ -4,6 +4,9 @@ from .models import *
 from rest_framework.generics import GenericAPIView, ListAPIView,CreateAPIView,RetrieveAPIView,DestroyAPIView, ListCreateAPIView, RetrieveUpdateAPIView,RetrieveDestroyAPIView,RetrieveUpdateDestroyAPIView
 from rest_framework.mixins import ListModelMixin, CreateModelMixin,RetrieveModelMixin,UpdateModelMixin,DestroyModelMixin
 
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import AllowAny
+
 class InternList(ListAPIView):
     queryset = Intern.objects.all()
     serializer_class = InternSerializer
@@ -19,6 +22,8 @@ class InternRetUpDe(RetrieveUpdateDestroyAPIView):
 class InternLC(GenericAPIView, ListModelMixin,CreateModelMixin):
     queryset = Intern.objects.all()
     serializer_class = InternSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [AllowAny]
 
     def get(self,request,*args,**kwargs):
         return self.list(request,*args,**kwargs)

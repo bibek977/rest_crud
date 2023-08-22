@@ -4,19 +4,29 @@ from .serializers import *
 from rest_framework import viewsets
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 
 
 class InternModelViewSet(viewsets.ModelViewSet):
     queryset = Intern.objects.all()
     serializer_class = InternSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
 
 
 class InternReadOnly(viewsets.ReadOnlyModelViewSet):
     queryset = Intern.objects.all()
     serializer_class = InternSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAdminUser]
 
 
 class InternViewSet(viewsets.ViewSet):
+
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [AllowAny]
 
     def show(self):
         print("****list*****")
