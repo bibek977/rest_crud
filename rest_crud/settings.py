@@ -47,6 +47,7 @@ EXTERNAL_APPS = [
     'function_api',
     'mixins',
     'viewset',
+    'auth_api',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS

@@ -24,5 +24,6 @@ urlpatterns = [
     path('crud_api/',include("crud_api.urls")),
     path('function_api/',include('function_api.urls')),
     path('mixins_api/',include('mixins.urls')),
-    path('viewset/',include('viewset.urls'))
+    path('viewset/',include('viewset.urls')),
+    path("auth_api/", include('auth_api.urls'))
 ]
