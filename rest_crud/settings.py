@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 EXTERNAL_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
     'api',
     'intern_api',
     'crud_api',
@@ -48,6 +49,7 @@ EXTERNAL_APPS = [
     'mixins',
     'viewset',
     'auth_api',
+    'token_auth',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS

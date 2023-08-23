@@ -25,5 +25,6 @@ urlpatterns = [
     path('function_api/',include('function_api.urls')),
     path('mixins_api/',include('mixins.urls')),
     path('viewset/',include('viewset.urls')),
-    path("auth_api/", include('auth_api.urls'))
+    path("auth_api/", include('auth_api.urls')),
+    path("token_auth/", include('token_auth.urls')),
 ]

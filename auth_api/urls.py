@@ -9,5 +9,5 @@ router.register("auth",InternAPI,basename="auth")
 
 urlpatterns = [
     path('',include(router.urls)),
-    path('log/',include('rest_framework.urls'))
+    path('login/',include('rest_framework.urls', namespace="auth"))
 ]
