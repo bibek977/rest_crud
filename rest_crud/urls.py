@@ -29,4 +29,5 @@ urlpatterns = [
     path("token_auth/", include('token_auth.urls')),
     path('json_token/',include('json_token.urls')),
     path('throttling/',include('throttling.urls')),
+    path('filtering/',include('filtering.urls')),
 ]

@@ -52,7 +52,8 @@ EXTERNAL_APPS = [
     'auth_api',
     'token_auth',
     'json_token',
-    'throttling'
+    'throttling',
+    'filtering'
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
@@ -153,17 +154,17 @@ REST_FRAMEWORK = {
     #     'rest_framework.permissions.IsAuthenticated',
     # ]
 
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle',
-        'rest_framework.throttling.UserRateThrottle'
-    ],
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle',
+    #     'rest_framework.throttling.UserRateThrottle'
+    # ],
     
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '5/day',
-        'user': '10/hour',
-        'onlyfive': '2/minute',
-        'onlyone' : '1/minute'
-    }
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '5/day',
+    #     'user': '10/hour',
+    #     'onlyfive': '2/minute',
+    #     'onlyone' : '1/minute'
+    # }
 
 }
 
