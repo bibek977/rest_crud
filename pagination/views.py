@@ -15,4 +15,6 @@ class FilmApi(viewsets.ModelViewSet):
 
     # pagination_class = MyPagePagination
 
-    pagination_class = MyLimitOffset
+    # pagination_class = MyLimitOffset
+
+    pagination_class = MyCurserPagination
