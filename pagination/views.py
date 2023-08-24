@@ -13,4 +13,6 @@ class FilmApi(viewsets.ModelViewSet):
     authentication_classes = [SessionAuthentication]
     permission_classes = [IsAuthenticated]
 
-    pagination_class = MyPagePagination
+    # pagination_class = MyPagePagination
+
+    pagination_class = MyLimitOffset
