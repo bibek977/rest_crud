@@ -53,7 +53,8 @@ EXTERNAL_APPS = [
     'token_auth',
     'json_token',
     'throttling',
-    'filtering'
+    'filtering',
+    'django_filters',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
@@ -166,6 +167,10 @@ REST_FRAMEWORK = {
     #     'onlyone' : '1/minute'
     # }
 
+    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+
+    # To rename search
+    # 'SEARCH_PARAM' : 'q'
 }
 
 # SIMPLE_JWT = {
