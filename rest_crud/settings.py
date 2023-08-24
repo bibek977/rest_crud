@@ -51,7 +51,8 @@ EXTERNAL_APPS = [
     'viewset',
     'auth_api',
     'token_auth',
-    'json_token'
+    'json_token',
+    'throttling'
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
@@ -141,15 +142,30 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Rest Framework Authentication and Permissions
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         # 'rest_framework.authentication.BasicAuthentication',
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     ],
-#     # 'DEFAULT_PERMISSION_CLASSES': [
-#     #     'rest_framework.permissions.IsAuthenticated',
-#     # ]
-# }
+
+REST_FRAMEWORK = {
+
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.BasicAuthentication',
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ]
+
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '5/day',
+        'user': '10/hour',
+        'onlyfive': '2/minute',
+        'onlyone' : '1/minute'
+    }
+
+}
 
 # SIMPLE_JWT = {
 #     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
