@@ -30,4 +30,5 @@ urlpatterns = [
     path('json_token/',include('json_token.urls')),
     path('throttling/',include('throttling.urls')),
     path('filtering/',include('filtering.urls')),
+    path('pagination/',include('pagination.urls')),
 ]

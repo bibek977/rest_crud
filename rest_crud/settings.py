@@ -55,6 +55,7 @@ EXTERNAL_APPS = [
     'throttling',
     'filtering',
     'django_filters',
+    'pagination'
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
@@ -171,6 +172,9 @@ REST_FRAMEWORK = {
 
     # To rename search
     # 'SEARCH_PARAM' : 'q'
+
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # 'PAGE_SIZE': 10
 }
 
 # SIMPLE_JWT = {
