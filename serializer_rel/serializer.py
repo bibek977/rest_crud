@@ -27,8 +27,17 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
         fields = [ 'title' ,'url', 'singer' , 'year', 'duration']
 
 
+
+
+class SingerDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Singer
+        exclude = ['id']
+        
+
 class AlbumSerializer(serializers.HyperlinkedModelSerializer):
-    singer = SingerSerializer(read_only = True)
+    singer = SingerDetailSerializer(read_only = True)
+    # singer = SingerSerializer(read_only = True)
     class Meta:
         model = Song
         fields = [ 'title' ,'url', 'singer' , 'year', 'duration']
