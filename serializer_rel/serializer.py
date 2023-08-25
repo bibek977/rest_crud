@@ -12,8 +12,15 @@ class SingerSerializer(serializers.ModelSerializer):
         fields = [ 'name','country', 'gender','song','age']
 
 
-class SongSerializer(serializers.ModelSerializer):
+# class SongSerializer(serializers.ModelSerializer):
+#     singer = serializers.StringRelatedField(read_only = True)
+#     class Meta:
+#         model = Song
+#         fields = [ 'title' , 'singer' , 'year', 'duration']
+
+
+class SongSerializer(serializers.HyperlinkedModelSerializer):
     singer = serializers.StringRelatedField(read_only = True)
     class Meta:
         model = Song
-        fields = [ 'title' , 'singer' , 'year', 'duration']
+        fields = [ 'title' ,'url', 'singer' , 'year', 'duration']
