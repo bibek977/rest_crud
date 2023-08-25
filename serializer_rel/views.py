@@ -10,3 +10,7 @@ class SingerAPI(viewsets.ModelViewSet):
 class SongAPI(viewsets.ModelViewSet):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
+
+class AlbumAPI(viewsets.ModelViewSet):
+    queryset = Song.objects.all()
+    serializer_class = AlbumSerializer

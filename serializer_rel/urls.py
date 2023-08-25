@@ -6,6 +6,7 @@ router = DefaultRouter()
 
 router.register('singer',SingerAPI,basename="singer")
 router.register('song',SongAPI,basename="song")
+router.register('album',AlbumAPI,basename="album")
 
 urlpatterns = [
     path('', include(router.urls)),
