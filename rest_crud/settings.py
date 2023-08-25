@@ -55,7 +55,8 @@ EXTERNAL_APPS = [
     'throttling',
     'filtering',
     'django_filters',
-    'pagination'
+    'pagination',
+    'serializer_rel',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS

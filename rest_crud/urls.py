@@ -31,4 +31,5 @@ urlpatterns = [
     path('throttling/',include('throttling.urls')),
     path('filtering/',include('filtering.urls')),
     path('pagination/',include('pagination.urls')),
+    path('serializer_rel/', include('serializer_rel.urls')),
 ]
